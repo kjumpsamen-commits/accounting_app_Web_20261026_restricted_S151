@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block title %}說明{% endblock %}
+{% block breadcrumb %}<i class="bi bi-question-circle me-1"></i>說明{% endblock %}
+{% block content %}
+<div class="page-header">
+  <h2 class="page-title"><i class="bi bi-question-circle"></i> 說明</h2>
+</div>
+<div class="card">
+  <div class="card-body help-body">
+    {% if restricted %}<p class="text-muted">這個網站只提供查看「繳費狀況」與「特殊收費」。對繳費狀態有疑問，請直接詢問管帳的人。</p>{% endif %}
+    {{ help_body | safe }}
+  </div>
+</div>
+{# S14：說明內容由 help_content.py 產生（與桌面版說明同一份） #}
+{% endblock %}
